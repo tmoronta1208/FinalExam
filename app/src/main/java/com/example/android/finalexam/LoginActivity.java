@@ -1,5 +1,6 @@
 package com.example.android.finalexam;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,18 +21,35 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        submitButton = findViewById(R.id.submit_button);
         login = getApplicationContext().getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
-
+        //sharedPrefCheck();
         start();
 
     }
 
+//    private void sharedPrefCheck() {
+//
+//        SharedPreferences preferences = getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
+//        String checkUser = "username" + username.getText().toString();
+//        String checkPassword = "password" + username.getText().toString();
+//
+//        if (checkUser == null) {
+//
+//            start();
+////            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+////            intent.putExtra("currentUser", username.getText().toString());
+////            startActivity(intent);
+//        }
+//        finish();
+//    }
+
+
     private void start() {
 
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        submitButton = findViewById(R.id.submit_button);
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,10 +65,12 @@ public class LoginActivity extends AppCompatActivity {
                     checkUsername(enteredPassWord, enteredUserName);
                     if (checkUsername(enteredPassWord, enteredUserName)) {
                         editor.putString("username", enteredUserName);
-                        editor.putString("username", enteredPassWord);
+                        editor.putString("password", enteredPassWord);
                         editor.commit();
 
-
+                        Intent intent = new Intent(LoginActivity.this, BreedsActivity.class);
+                        intent.putExtra("username", SHARED_PREFS_KEY);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "Password cannot contain username", Toast.LENGTH_SHORT).show();
 
