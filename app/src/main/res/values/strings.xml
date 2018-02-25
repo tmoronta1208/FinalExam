@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">FinalExam</string>
+    <string name="please_enter_a_username">Please enter a username</string>
+    <string name="please_enter_a_password">Please enter a password</string>
+    <string name="Submit">Submit</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
 </resources>

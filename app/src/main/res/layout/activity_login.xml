@@ -1,37 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.android.finalexam.LoginActivity">
 
-   <TextView
-       android:id="@+id/login_username"
-       android:hint="Please enter a username"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:gravity="center"
-       />
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp">
 
-    <TextView
-        android:id="@+id/login_password"
-        android:hint="Please enter a password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        />
+        <TextView
+            android:id="@+id/username_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/username"/>
+
+        <EditText
+            android:id="@+id/username_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Please enter your username"
+            android:inputType="textWebEmailAddress"/>
+
+        <TextView
+            android:id="@+id/password_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password"/>
+
+        <EditText
+            android:id="@+id/password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Password"
+            android:inputType="textWebPassword"/>
 
 
-    <Button
-        android:hint="Submit"
-        android:id="@+id/submit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
 
-        />
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Submit"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
