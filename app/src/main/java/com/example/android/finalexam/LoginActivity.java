@@ -20,29 +20,64 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         login = getApplicationContext().getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
+
+        start();
+
+    }
+
+    private void start() {
 
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         submitButton = findViewById(R.id.submit_button);
-
-        final String enteredUserName = username.getText().toString();
-        final String enteredPassWord = password.getText().toString();
-
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(enteredUserName)){
-                    Toast.makeText(getApplicationContext(), "Please enter a username", Toast.LENGTH_SHORT).show();
+                String enteredUserName = username.getText().toString();
+                String enteredPassWord = password.getText().toString();
 
-                }
-                if(TextUtils.isEmpty(enteredPassWord)){
-                    Toast.makeText(getApplicationContext(), "Please enter a password", Toast.LENGTH_SHORT).show();
+                SharedPreferences.Editor editor = login.edit();
 
+                if (TextUtils.isEmpty(enteredPassWord) || TextUtils.isEmpty(enteredUserName)) {
+                    Toast.makeText(getApplicationContext(), "Please enter a password and username", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    checkUsername(enteredPassWord, enteredUserName);
+                    if (checkUsername(enteredPassWord, enteredUserName)) {
+                        editor.putString("username", enteredUserName);
+                        editor.putString("username", enteredPassWord);
+                        editor.commit();
+
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Password cannot contain username", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
+
+
             }
         });
 
 
     }
+
+
+    public static boolean checkUsername(String userPassword, String userName) {
+
+        if (userName == "" || userPassword == "") {
+            return false;
+
+        }
+
+        if (userPassword.contains(userName)) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
 }
