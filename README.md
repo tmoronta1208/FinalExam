@@ -12,4 +12,4 @@ Challenges:
  
  Moving Forward:
  Will focus on networking and working with POJO's. 
- Time management and MVP.
+ Time management and remembering to focus on MVP.
