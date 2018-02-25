@@ -10,6 +10,7 @@
 
     <TextView
         android:id="@+id/display_name"
+        android:textSize="@dimen/text_size"
         android:text="@string/puppy_breed_name"
         android:layout_weight="1"
         android:layout_width="match_parent"

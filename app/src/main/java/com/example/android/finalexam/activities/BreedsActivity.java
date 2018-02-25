@@ -34,8 +34,6 @@ public class BreedsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breeds);
 
-//        DoggyAPIClient doggyAPIClient = new DoggyAPIClient();
-//        doggyAPIClient.serviceCall();
 
         textView = findViewById(R.id.welcome_textview);
 
@@ -64,7 +62,7 @@ public class BreedsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent spanielIntent = new Intent(BreedsActivity.this, DogsActivity.class);
-                spanielIntent.putExtra("key1", "spaniel");
+                spanielIntent.putExtra("key", "spaniel");
                 startActivity(spanielIntent);
             }
         });
@@ -73,7 +71,7 @@ public class BreedsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent retrieverIntent = new Intent(BreedsActivity.this, DogsActivity.class);
-                retrieverIntent.putExtra("key2", "retriever");
+                retrieverIntent.putExtra("key", "retriever");
                 startActivity(retrieverIntent);
             }
         });
@@ -82,7 +80,7 @@ public class BreedsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent poodleIntent = new Intent(BreedsActivity.this, DogsActivity.class);
-                poodleIntent.putExtra("key3", "poodle");
+                poodleIntent.putExtra("key", "poodle");
                 startActivity(poodleIntent);
             }
         });
