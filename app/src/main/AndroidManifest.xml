@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.BreedsActivity"></activity>
+        <activity android:name=".activities.BreedsActivity" />
+        <activity android:name=".activities.DogsActivity"></activity>
     </application>
 
 </manifest>

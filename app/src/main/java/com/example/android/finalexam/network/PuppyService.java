@@ -16,11 +16,13 @@ public interface PuppyService {
 
 
     @GET("/api/breed/{breed-name}/images/random")
-    Call<Breed> getImage(@Path("breed-name")String terrier);
+    Call<Breed> getImage(@Path("breed-name")String puppy);
 
 
-//    @GET("/api/breed/{breed-name}/images/random")
-//    Call<Breed> getTerrierImage(@Path("breed-name")String spaniel);
+
+
+    @GET("/breed/{breed-name}/images")
+    Call<Breed> getPuppyImages(@Path("breed-name")String puppies);
 //
 //    @GET("/api/breed/retriever/images/random")
 //    Call<Breed> getRetriever();

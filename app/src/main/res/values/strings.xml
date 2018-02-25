@@ -7,4 +7,9 @@
     <string name="password">Password:</string>
     <string name="what_kind_of_dog_would_you_like_to_see_username">What kind of dog would you like to see, {username} ?</string>
     <string name="question">\?</string>
+    <string name="spaniel">Spaniel</string>
+    <string name="terrier">Terrier</string>
+    <string name="retriever">Retriever</string>
+    <string name="poodle">Poodle</string>
+    <string name="puppy_breed_name">Puppy Breed Name</string>
 </resources>
