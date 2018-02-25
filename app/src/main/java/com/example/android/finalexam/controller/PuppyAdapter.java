@@ -20,9 +20,9 @@ import static com.example.android.finalexam.R.id.item_view_layout;
  */
 
 public class PuppyAdapter extends RecyclerView.Adapter<PuppyViewHolder> {
-    List<Message> imagesList;
+    List<Images> imagesList;
 
-    public PuppyAdapter(List<Message> imagesList) {
+    public PuppyAdapter(List<Images> imagesList) {
         this.imagesList = imagesList;
     }
 
@@ -35,10 +35,10 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyViewHolder> {
 
     @Override
     public void onBindViewHolder(PuppyViewHolder holder, int position) {
-        Message message = imagesList.get(position);
+        Images message = imagesList.get(position);
 
 
-        holder.onBind(message);
+        holder.onBind(message.getMessage().toString());
     }
 
     @Override

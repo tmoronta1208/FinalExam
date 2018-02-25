@@ -1,18 +1,20 @@
 package com.example.android.finalexam.model;
 
+import java.util.List;
+
 /**
  * Created by TatianaM on 2/25/18.
  */
 
 public class Message {
 
-    String url;
+    List<String> url;
 
-    public String getUrl() {
+    public List<String> getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(List<String> url) {
         this.url = url;
     }
 }

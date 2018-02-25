@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.BreedsActivity" />
-        <activity android:name=".activities.DogsActivity"></activity>
+        <activity android:name=".activities.DogsActivity" />
+        <activity android:name=".activities.PhotoActivity"></activity>
     </application>
 
 </manifest>

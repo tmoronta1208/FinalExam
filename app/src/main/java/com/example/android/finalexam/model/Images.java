@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Images {
     private String status;
-    private List<Message> message;
+    private List<String> message;
 
     public String getStatus() {
         return status;
@@ -18,11 +18,11 @@ public class Images {
         this.status = status;
     }
 
-    public List<Message> getMessage() {
+    public List<String> getMessage() {
         return message;
     }
 
-    public void setMessage(List<Message> message) {
+    public void setMessage(List<String> message) {
         this.message = message;
     }
 }

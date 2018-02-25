@@ -1,6 +1,7 @@
 package com.example.android.finalexam.network;
 
 import com.example.android.finalexam.model.Breed;
+import com.example.android.finalexam.model.Images;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -22,7 +23,7 @@ public interface PuppyService {
 
 
     @GET("/breed/{breed-name}/images")
-    Call<Breed> getPuppyImages(@Path("breed-name")String puppies);
+    Call<Images> getPuppyImages(@Path("breed-name")String puppies);
 //
 //    @GET("/api/breed/retriever/images/random")
 //    Call<Breed> getRetriever();
