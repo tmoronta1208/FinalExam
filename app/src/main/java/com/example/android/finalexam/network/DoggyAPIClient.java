@@ -32,7 +32,7 @@ public class DoggyAPIClient implements retrofit2.Callback<Breed> {
                 .build();
 
         PuppyService puppyService = retrofit.create(PuppyService.class);
-        Call<Breed> call = puppyService.getBreedImage();
+        Call<Breed> call = puppyService.getImage("terrier");
         call.enqueue(this);
     }
 

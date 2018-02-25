@@ -32,8 +32,8 @@ public class BreedsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breeds);
 
-        DoggyAPIClient doggyAPIClient = new DoggyAPIClient();
-        doggyAPIClient.serviceCall();
+//        DoggyAPIClient doggyAPIClient = new DoggyAPIClient();
+//        doggyAPIClient.serviceCall();
 
         textView = findViewById(R.id.welcome_textview);
 
@@ -57,17 +57,19 @@ public class BreedsActivity extends AppCompatActivity {
                 .build();
 
         PuppyService puppyService = retrofit.create(PuppyService.class);
-        Call<Breed> call = puppyService.getBreedImage();
-        call.enqueue(new Callback<Breed>() {
+        Call<Breed> call1 = puppyService.getImage("terrier");
+        Call<Breed> call2 = puppyService.getImage("spaniel");
+        Call<Breed> call3= puppyService.getImage("retriever");
+        Call<Breed> call4 = puppyService.getImage("poodle");
+        call1.enqueue(new Callback<Breed>() {
             @Override
             public void onResponse(Call<Breed> call, Response<Breed> response) {
                 Log.d("CALLCHECK", "SUCCESS");
+
                 breed = response.body();
                 image = breed.getMessage();
-                Picasso.with(getApplicationContext()).load(image).into(terrierImage);
-                Picasso.with(getApplicationContext()).load(image).into(spanielImage);
-                Picasso.with(getApplicationContext()).load(image).into(retrieverImage);
-                Picasso.with(getApplicationContext()).load(image).into(poodleImage);
+                Picasso.with(getApplicationContext()).load(image).fit().into(terrierImage);
+
             }
 
             @Override
@@ -75,6 +77,49 @@ public class BreedsActivity extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
+        call2.enqueue(new Callback<Breed>() {
+            @Override
+            public void onResponse(Call<Breed> call, Response<Breed> response) {
+                breed = response.body();
+                image = breed.getMessage();
+                Picasso.with(getApplicationContext()).load(image).fit().into(spanielImage);
+
+            }
+
+            @Override
+            public void onFailure(Call<Breed> call, Throwable t) {
+
+            }
+        });
+
+        call3.enqueue(new Callback<Breed>() {
+            @Override
+            public void onResponse(Call<Breed> call, Response<Breed> response) {
+                breed = response.body();
+                image = breed.getMessage();
+                Picasso.with(getApplicationContext()).load(image).fit().into(retrieverImage);
+
+            }
+
+            @Override
+            public void onFailure(Call<Breed> call, Throwable t) {
+
+            }
+        });
+call4.enqueue(new Callback<Breed>() {
+    @Override
+    public void onResponse(Call<Breed> call, Response<Breed> response) {
+        breed = response.body();
+        image = breed.getMessage();
+        Picasso.with(getApplicationContext()).load(image).fit().into(poodleImage);
+
+    }
+
+    @Override
+    public void onFailure(Call<Breed> call, Throwable t) {
+
+    }
+});
 
 
 
