@@ -5,4 +5,6 @@
     <string name="Submit">Submit</string>
     <string name="username">Username:</string>
     <string name="password">Password:</string>
+    <string name="what_kind_of_dog_would_you_like_to_see_username">What kind of dog would you like to see, {username} ?</string>
+    <string name="question">\?</string>
 </resources>
